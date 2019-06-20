@@ -45,12 +45,12 @@ public class ChangeDdlActivity extends AppCompatActivity {
     public void save(View btn) {
         Log.i(TAG,"save:");
         //获取新的值
-        String newText1 = String.format(text1.getText().toString());
-        String newText2 = String.format(text2.getText().toString());
-        String newText3 = String.format(text3.getText().toString());
-        String newText4 = String.format(text4.getText().toString());
-        String newText5 = String.format(text5.getText().toString());
-        String newText6 = String.format(text6.getText().toString());
+        String newText1 = String.valueOf(text1.getText().toString());
+        String newText2 = String.valueOf(text2.getText().toString());
+        String newText3 = String.valueOf(text3.getText().toString());
+        String newText4 = String.valueOf(text4.getText().toString());
+        String newText5 = String.valueOf(text5.getText().toString());
+        String newText6 = String.valueOf(text6.getText().toString());
         Log.i(TAG,"save:获取到新的值");
         Log.i("ChangeDdlActivity","save:text1="+newText1);
 

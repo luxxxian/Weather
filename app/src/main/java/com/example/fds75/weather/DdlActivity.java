@@ -25,7 +25,6 @@ public class DdlActivity extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ddl);
 
-
         show1 = (TextView) findViewById(R.id.textV1);
         show2 = (TextView) findViewById(R.id.textV2);
         show3 = (TextView) findViewById(R.id.textV3);
@@ -35,19 +34,35 @@ public class DdlActivity extends AppCompatActivity{
 
         SharedPreferences sharedPreferences = getSharedPreferences("myddl",Activity.MODE_PRIVATE);
         //另：SharedPreferences sharedPreferences1 = PreferenceManager.getDefaultSharedPreferences(this);
-        text1 = sharedPreferences.getString("t1","");
-        text2 = sharedPreferences.getString("t2","");
-        text3 = sharedPreferences.getString("t3","");
-        text4 = sharedPreferences.getString("t4","");
-        text5 = sharedPreferences.getString("t5","");
-        text6 = sharedPreferences.getString("t6","");
+        text1 = sharedPreferences.getString("t_1","");
+        text2 = sharedPreferences.getString("t_2","");
+        text3 = sharedPreferences.getString("t_3","");
+        text4 = sharedPreferences.getString("t_4","");
+        text5 = sharedPreferences.getString("t_5","");
+        text6 = sharedPreferences.getString("t_6","");
 
     }
 
-    public void ddl(View btn){
+    public void newBtn(View btn){
+        //获取用户输入内容
+        String tet1 = show1.getText().toString();
+        String tet2 = show2.getText().toString();
+        String tet3 = show3.getText().toString();
+        String tet4 = show4.getText().toString();
+        String tet5 = show5.getText().toString();
+        String tet6 = show6.getText().toString();
 
-        //打开一个页面Activity
-        Log.i("open", "openOne");
+        show1.setText(String.format(text1));
+        show2.setText(String.format(text2));
+        show3.setText(String.format(text3));
+        show4.setText(String.format(text4));
+        show5.setText(String.format(text5));
+        show6.setText(String.format(text6));
+    }
+
+    public void ddl(View btn){
+            //打开一个页面Activity
+        Log.i("open", "ddl");
 
         //用intent对象传参数
         Intent config = new Intent(this, ChangeDdlActivity.class);
@@ -61,17 +76,12 @@ public class DdlActivity extends AppCompatActivity{
         config.putExtra("t5", text5);
         config.putExtra("t6", text6);
 
-        Log.i(TAG, "openOne:text1=" + text1);
+        Log.i(TAG, "ddl:text1=" + text1);
 
         //startActivity(config);
         startActivityForResult(config, 1);//表示打开这个窗口是为了带回数据,"1"是请求代码
     }
 
-    public void onClick(View btn){
-        //获取用户输入内容
-
-
-    }
 
 
     //处理带回数据
@@ -92,12 +102,12 @@ public class DdlActivity extends AppCompatActivity{
             //将新写入的ddl写到SharedPreference里
             SharedPreferences sharedPreferences = getSharedPreferences("myddl",Activity.MODE_PRIVATE);
             SharedPreferences.Editor editor = sharedPreferences.edit();
-            editor.putString("t1",text1);
-            editor.putString("t2",text2);
-            editor.putString("t3",text3);
-            editor.putString("t4",text4);
-            editor.putString("t5",text5);
-            editor.putString("t6",text6);
+            editor.putString("t_1",text1);
+            editor.putString("t_2",text2);
+            editor.putString("t_3",text3);
+            editor.putString("t_4",text4);
+            editor.putString("t_5",text5);
+            editor.putString("t_6",text6);
             editor.commit();
             Log.i(TAG,"onActivityResult:数据以保存到SharedPreferences");
 
