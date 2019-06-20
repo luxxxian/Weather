@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".DdlActivity">
+
+    <TextView
+        android:id="@+id/textV1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="备忘录1" />
+
+    <TextView
+        android:id="@+id/textV2"
+        android:layout_marginTop="24dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="备忘录2" />
+
+    <TextView
+        android:id="@+id/textV3"
+        android:layout_marginTop="24dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="备忘录3" />
+
+    <TextView
+        android:id="@+id/textV4"
+        android:layout_marginTop="24dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="备忘录4" />
+
+    <TextView
+        android:id="@+id/textV5"
+        android:layout_marginTop="24dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="备忘录5" />
+
+    <TextView
+        android:id="@+id/textV6"
+        android:layout_marginTop="24dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="备忘录6" />
+
+    <Button
+        android:id="@+id/btn_change"
+        android:layout_marginTop="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="ddl"
+        android:text="修改" />
+
+    <Button
+        android:id="@+id/btn_new"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="newBtn"
+        android:text="显示最新" />
+</LinearLayout>
