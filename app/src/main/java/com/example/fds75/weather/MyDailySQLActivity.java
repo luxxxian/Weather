@@ -77,7 +77,7 @@ public class MyDailySQLActivity extends ListActivity implements Runnable{
         for (DailyItem item : manager.listAll()){
             retList.add(item.getCurName()+"-->"+item.getCurDate()+"-->"+item.getCurDetail());
         }
-        
+
 
         Message msg = handler.obtainMessage(7);
         msg.obj = retList;
