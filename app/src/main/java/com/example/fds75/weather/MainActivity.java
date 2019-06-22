@@ -42,4 +42,12 @@ public class MainActivity extends AppCompatActivity {
         Intent config = new Intent(this,DdlActivity.class);
         startActivity(config);
     }
+
+    public void MyDay(View btn){
+        //打开一个页面Activity
+        Log.i("open","openOne");
+        //用intent对象传参数
+        Intent config = new Intent(this,MyDailyActivity.class);
+        startActivity(config);
+    }
 }

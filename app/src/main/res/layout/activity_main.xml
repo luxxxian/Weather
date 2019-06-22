@@ -37,5 +37,12 @@
         android:onClick="Myddl"
         android:text="我的ddl" />
 
+    <Button
+        android:id="@+id/My_day"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="MyDay"
+        android:text="我的日志" />
+
 
 </LinearLayout>
