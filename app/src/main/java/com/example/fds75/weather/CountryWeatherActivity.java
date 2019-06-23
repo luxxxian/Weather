@@ -68,16 +68,17 @@ public class CountryWeatherActivity extends AppCompatActivity implements Runnabl
         //获取网络数据，放入list带回到主线程
         List<String> retList = new ArrayList<String>();
         //获得当前日期
+
         String curDAteStr = (new SimpleDateFormat("yyyy-MM-dd")).format(new Date());
         Log.i("run", "curDateStr: " + curDAteStr + "logDate:" + logDate);
 
         if (curDAteStr.equals(logDate)) {
             //如果日期相等，则不从网络中获取数据
             Log.i("run", "日期相等，不从网络中获取数据，从数据库中获取数据 ");
-//            WeaManager manager = new WeaManager(this);
-//            for (RateItem item : manager.listAll()){
-//                retList.add(item.getCurName()+"-->"+item.getCurRate());
-//            }
+            WEManager manager = new WEManager(this);
+            for (WeatherItem item : manager.listAll()){
+                retList.add(item.getCurCity()+"-->"+item.getCurDay()+"-->"+item.getCurNight()+"-->"+item.getCurMax()+"-->"+item.getCurMin());
+            }
 
         } else {
             //从网络中获得数据
@@ -85,20 +86,11 @@ public class CountryWeatherActivity extends AppCompatActivity implements Runnabl
             Document doc = null;
             try {
                 Thread.sleep(1000);
+                List<WeatherItem> rateList = new ArrayList<WeatherItem>();
                 doc = Jsoup.connect("http://www.weather.com.cn/textFC/sichuan.shtml").get();
                 //doc = Jsoup.parse(html);
                 Log.i(TAG, "run: "+doc.title());
                 Elements tables = doc.getElementsByTag("table");
-//            int i=1;
-//            for(Element table :tables){
-//                Log.i(TAG, "run: table["+i+"]="+table);
-//            }
-
-//            Element table2 = tables.get(1);
-//            Element table3 = tables.get(2);
-                //Log.i(TAG, "run: table2"+table2);
-
-
 
                 //获取td中的数据,通过for循环获取到21个table中的数据
                 for(int j=1;j<=21;j++) {
@@ -116,26 +108,30 @@ public class CountryWeatherActivity extends AppCompatActivity implements Runnabl
                         //retList.add(city.text() + ">白天：" + daytime.text() + ">夜间：" + nighttime.text() + ">>最高：" + max.text() + ">最低：" + min.text());
                         retList.add(maincity.text() + ">>>" + city.text() + ">>最高：" + max.text() + ">最低：" + min.text());
 
+                        WeatherItem weatherItem = new WeatherItem(city.text(),daytime.text(),nighttime.text(),max.text(),min.text());
+                        rateList.add(weatherItem);
                     }
                 }
+                WEManager dbManager = new WEManager(CountryWeatherActivity.this);
 
-//                //把数据写入数据库
-//                RateManager manager = new RateManager(this);
-//                manager.deleteAll();
-//                manager.addAll(rateList);
-//
-//                //更新记录日期
-//                SharedPreferences sp = getSharedPreferences("myrate",Context.MODE_PRIVATE);
-//                SharedPreferences.Editor edit = sp.edit();
-//                edit.putString(DATE_SP_KEY,curDAteStr);
-//                edit.commit();
-//                Log.i("run", "更新日期结束: "+curDAteStr);
+                dbManager.deleteAll();
+                Log.i("db","删除所有记录");
+                dbManager.addAll(rateList);
+                Log.i("db","添加新记录集");
+
 
             } catch (IOException e) {
                 e.printStackTrace();
             }catch (InterruptedException e) {
                 e.printStackTrace();
             }
+
+            //更新记录日期
+            SharedPreferences sp = getSharedPreferences("myrate", Context.MODE_PRIVATE);
+            SharedPreferences.Editor edit = sp.edit();
+            edit.putString(DATE_SP_KEY, curDAteStr);
+            edit.commit();
+            Log.i("run","更新日期结束：" + curDAteStr);
         }
 
         Message msg = handler.obtainMessage(7);

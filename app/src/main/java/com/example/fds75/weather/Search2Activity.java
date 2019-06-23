@@ -1,14 +1,18 @@
 package com.example.fds75.weather;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -30,46 +34,46 @@ import java.util.Date;
 
 import javax.security.auth.login.LoginException;
 
-public class MyActivity extends AppCompatActivity implements Runnable{
-    private String TAG="MyActivity";
-    private String Scity,Sclim1,Sclim2,Scity2,Sclim12,Sclim22,Scity3,Sclim13,Sclim23;
+public class Search2Activity extends AppCompatActivity implements Runnable{
+    String TAG = "SearchActivity";
+    String searchweather;
+    String weather1;
+    String m;
+    EditText weatherText;
+    private String Scity,Sclim1,Sclim2;
+    TextView city,clim1,clim2,weatherT;
 
-    TextView city,clim1,clim2;
     Handler handler;
     private String updateDate = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_my);
+        setContentView(R.layout.activity_search);
 
-        city = (TextView)findViewById(R.id.city);
-        clim1 = (TextView)findViewById(R.id.climate1);
-        clim2 = (TextView)findViewById(R.id.climate2);
 
-        SharedPreferences sharedPreferences =getSharedPreferences("my",Activity.MODE_PRIVATE);
+        //city = (TextView)findViewById(R.id.search_of_city);
+        clim1 = (TextView)findViewById(R.id.search_climate1);
+        clim2 = (TextView)findViewById(R.id.search_climate2);
+
+        SharedPreferences sharedPreferences =getSharedPreferences("mine",SearchActivity.MODE_PRIVATE);
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(this);
+        //weather1 = sharedPreferences.getString("weather-date","");
         Scity = sharedPreferences.getString("city-date","");
         Sclim1 = sharedPreferences.getString("day-date","");
         Sclim2 = sharedPreferences.getString("temper-date","");
 
-        Scity2 = sharedPreferences.getString("city-date2","");
-        Sclim12 = sharedPreferences.getString("day-date2","");
-        Sclim22 = sharedPreferences.getString("temper-date2","");
+//        Scity = sharedPreferences.getString("city-date","");
+//        Sclim1 = sharedPreferences.getString("day-date","");
+//        Sclim2 = sharedPreferences.getString("temper-date","");
 
-        Scity3 = sharedPreferences.getString("city-date3","");
-        Sclim13 = sharedPreferences.getString("day-date3","");
-        Sclim23 = sharedPreferences.getString("temper-date3","");
+        Log.i(TAG, "onCreate: weather1"+weather1);
 
         //获取当前系统时间
         Date today = Calendar.getInstance().getTime();
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");//将时间转换成字符串
         final String todayStr = sdf.format(today);
 
-        Log.i(TAG, "onCreate: Scity"+Scity);
-        Log.i(TAG, "onCreate: Sclim1"+Sclim1);
-        Log.i(TAG, "onCreate: Sclim2"+Sclim2);
-        Log.i(TAG, "onCreate: updateDate="+updateDate);
 
         //判断时间
         if(!todayStr.equals(updateDate)){
@@ -86,69 +90,46 @@ public class MyActivity extends AppCompatActivity implements Runnable{
             public void handleMessage(Message msg) {
                 if (msg.what==5){//观察是否与run方法中的what相同
                     Bundle bdl = (Bundle)msg.obj;
-                    Scity = bdl.getString("city-date");
-                    Sclim1 = bdl.getString("day-date");
-                    Sclim2 = bdl.getString("temper-date");
+                    weather1 = bdl.getString("weather-daten");
+                    Scity = bdl.getString("city-daten");
+                    Sclim1 = bdl.getString("day-daten");
+                    Sclim2 = bdl.getString("temper-daten");
 
-                    Scity2 = bdl.getString("city-date2");
-                    Sclim12 = bdl.getString("day-date2");
-                    Sclim22 = bdl.getString("temper-date2");
-
-                    Scity3 = bdl.getString("city-date3");
-                    Sclim13 = bdl.getString("day-date3");
-                    Sclim23 = bdl.getString("temper-date3");
-
-//                    Log.i(TAG, "handleMessage: date"+Scity);
-//                    Log.i(TAG, "handleMessage: date"+Sclim1);
-//                    Log.i(TAG, "handleMessage: date"+Sclim2);
-
-                    //保存更新的日期
-                    SharedPreferences sharedPreferences = getSharedPreferences("myrate",Activity.MODE_PRIVATE);
+                    SharedPreferences sharedPreferences = getSharedPreferences("mine",SearchActivity.MODE_PRIVATE);
                     SharedPreferences.Editor editor = sharedPreferences.edit();
-                    editor.putString("city-date",Scity);
-                    editor.putString("day-date",Sclim1);
-                    editor.putString("temper-date",Sclim2);
-
-                    editor.putString("city-date2",Scity2);
-                    editor.putString("day-date2",Sclim12);
-                    editor.putString("temper-date2",Sclim22);
-
-                    editor.putString("city-date3",Scity3);
-                    editor.putString("day-date3",Sclim13);
-                    editor.putString("temper-date3",Sclim23);
+                    editor.putString("weather-daten",weather1);
+                    editor.putString("city-daten",Scity);
+                    editor.putString("day-daten",Sclim1);
+                    editor.putString("temper-daten",Sclim2);
 
                     editor.putString("update_date",todayStr);
-                    editor.apply();//保存数据
+                    editor.apply();
 
-                    Toast.makeText(MyActivity.this,"气温已更新",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Search2Activity.this,"气温已获取",Toast.LENGTH_SHORT).show();
                 }
                 super.handleMessage(msg);
             }
         };
-
     }
 
-    public void onClick(View btn){
+    public void search(View btn){
 //        String Scity = city.getText().toString();
 //        String Sclim1 = clim1.getText().toString();
 //        String Sclim2 = clim2.getText().toString();
+        weatherText = (EditText)findViewById(R.id.search_city);
+        weather1 = weatherText.getText().toString();
 
-        if(btn.getId()==R.id.btn_cd){
-            city.setText(String.format(Scity));
-            clim1.setText(String.format(Sclim1));
-            clim2.setText(String.format(Sclim2));
-        } else if(btn.getId()==R.id.btn_nc){
-            city.setText(String.format(Scity2));
-            clim1.setText(String.format(Sclim12));
-            clim2.setText(String.format(Sclim22));
-        }else {
-            city.setText(String.format(Scity3));
-            clim1.setText(String.format(Sclim13));
-            clim2.setText(String.format(Sclim23));
+        Log.i(TAG, "search: 按钮weatherText"+weatherText);
+        Log.i(TAG, "search: 按钮m"+m);
+        Log.i(TAG, "search: 按钮weather1"+weather1);
+
+        if(btn.getId()==R.id.search_weather) {
+            // city.setText(Scity);
+            clim1.setText(Sclim1);
+            clim2.setText(Sclim2);
         }
 
     }
-
 
     @Override
     public void run() {
@@ -162,24 +143,8 @@ public class MyActivity extends AppCompatActivity implements Runnable{
             }
         }
 
-        //获取网络数据
-//        URL url = null;
-//        try {
-//            url = new URL("http://www.weather.com.cn/textFC/sichuan.shtml");
-//            HttpURLConnection http = (HttpURLConnection) url.openConnection();
-//            InputStream in = http.getInputStream();
-//
-//            String html = inputStream2String(in);
-//            Log.i(TAG, "run: ="+html);
-//
-//        } catch (MalformedURLException e) {
-//            e.printStackTrace();
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
         //用于保存获取的天气数据
         Bundle bundle = new Bundle();
-
 
         Document doc = null;
         try {
@@ -200,34 +165,26 @@ public class MyActivity extends AppCompatActivity implements Runnable{
                     Element min = tds.get(i + 6);
                     Log.i(TAG, "run: text=" + city.text() + ">白天：" + daytime.text() + ">夜间：" + nighttime.text() + ">>最高：" + max.text() + ">最低：" + min.text());
 
-                    if ("成都".equals(city.text())){
-                        bundle.putString("city-date",city.text());
-                        bundle.putString("day-date","日间；"+daytime.text()+">>夜间："+nighttime.text());
-                        bundle.putString("temper-date","最高；"+max.text()+"℃  >>最低："+min.text()+"℃");
+
+                    Log.i(TAG, "run: run weather"+weather1);
+                    if (weather1.equals(city.text())){
+                        bundle.putString("city-daten",city.text());
+                        bundle.putString("day-daten","日间；"+daytime.text()+">>夜间："+nighttime.text());
+                        bundle.putString("temper-daten","最高；"+max.text()+"℃  >>最低："+min.text()+"℃");
                     }
-                    else if ("青羊".equals(city.text())){
-                        bundle.putString("city-date2",city.text());
-                        bundle.putString("day-date2","日间；"+daytime.text()+">>夜间："+nighttime.text());
-                        bundle.putString("temper-date2","最高；"+max.text()+"℃  >>最低："+min.text()+"℃");
-                    }else if ("温江".equals(city.text())){
-                        bundle.putString("city-date3",city.text());
-                        bundle.putString("day-date3","日间；"+daytime.text()+">>夜间："+nighttime.text());
-                        bundle.putString("temper-date3","最高；"+max.text()+"℃  >>最低："+min.text()+"℃");
-                    }
+//                    else{
+//                        bundle.putString("city-daten","输入不正确");
+//                        bundle.putString("day-daten","");
+//                        bundle.putString("temper-daten","");
+//                    }
                 }
             }
-//            for (Element td : tds){
-//                Log.i(TAG, "run: td="+td);
-//                Log.i(TAG, "run: html="+td.html());
-//            }
 
         } catch (IOException e) {
             e.printStackTrace();
         }
 
         //bundle中保存所获取的数据
-
-
 
         //获取message对象，用于返回主线程
         Message msg = handler.obtainMessage();
@@ -237,7 +194,6 @@ public class MyActivity extends AppCompatActivity implements Runnable{
         msg.obj = bundle;
 
         handler.sendMessage(msg);//将msg发送到队列里
-
     }
 
     private String inputStream2String(InputStream inputStream) throws IOException {//将输入流转换成字符串输出
