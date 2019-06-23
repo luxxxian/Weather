@@ -12,37 +12,85 @@
         android:layout_width="wrap_content"
         android:layout_gravity="center"
         android:layout_height="wrap_content"
+        android:layout_margin="30dp"
         android:text="我的小应用"
         android:textSize="24sp" />
 
-    <Button
-        android:id="@+id/weather_btn"
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_marginTop="40dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="openOne"
-        android:text="四川天气" />
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/weather_btn"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:onClick="openOne"
+            android:text="四川天气" />
 
 
-    <Button
-        android:id="@+id/my_btn"
+        <Button
+            android:id="@+id/my_btn"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:onClick="mine"
+            android:text="我的天气" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="mine"
-        android:text="我的天气" />
+        android:layout_height="wrap_content">
 
-    <Button
-        android:id="@+id/my_ddl"
+        <Button
+            android:id="@+id/my_ddl"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:onClick="Myddl"
+            android:text="我的备忘录" />
+
+        <Button
+            android:id="@+id/My_day"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:onClick="MyDay"
+            android:text="我的日志" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="Myddl"
-        android:text="我的ddl" />
+        android:layout_height="wrap_content">
 
-    <Button
-        android:id="@+id/My_day"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="MyDay"
-        android:text="我的日志" />
+        <Button
+            android:id="@+id/mystudy"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:onClick="mystudy"
+            android:text="我的学习" />
 
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:text="更多" />
+
+    </LinearLayout>
 
 </LinearLayout>

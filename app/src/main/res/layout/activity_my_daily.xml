@@ -13,6 +13,7 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="30dp"
+        android:textSize="30dp"
         android:text="新的一天" />
 
     <TextView
@@ -22,20 +23,24 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="34dp"
-        android:layout_marginLeft="34dp"
-        android:layout_marginTop="76dp"
-        android:text="主题" />
+        android:layout_marginStart="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="100dp"
+        android:text="主题"
+        android:textSize="20dp" />
 
     <TextView
         android:id="@+id/day_date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignStart="@+id/day_main"
+        android:layout_alignLeft="@+id/day_main"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="139dp"
+        android:layout_marginStart="-2dp"
+        android:layout_marginLeft="-2dp"
+        android:layout_marginTop="168dp"
         android:text="日期"
-        android:layout_alignLeft="@+id/day_main" />
+        android:textSize="20dp" />
 
     <TextView
         android:id="@+id/day_detail"
@@ -46,19 +51,25 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="0dp"
         android:layout_marginLeft="0dp"
-        android:layout_marginTop="216dp"
-        android:text="内容" />
+        android:layout_marginTop="243dp"
+        android:text="内容"
+        android:textSize="20dp" />
 
     <EditText
         android:id="@+id/add_main"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignStart="@+id/add_date"
+        android:layout_alignLeft="@+id/add_date"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="63dp"
+        android:layout_marginStart="-9dp"
+        android:layout_marginLeft="-9dp"
+        android:layout_marginTop="89dp"
         android:ems="10"
+        android:hint="本条日志主题"
         android:inputType="textPersonName"
-        android:layout_alignLeft="@+id/add_date" />
+        android:text=" "
+        android:textSize="18dp" />
 
     <EditText
         android:id="@+id/add_detail"
@@ -67,11 +78,14 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_marginTop="126dp"
-        android:layout_marginEnd="64dp"
-        android:layout_marginRight="64dp"
+        android:layout_marginTop="161dp"
+        android:layout_marginEnd="42dp"
+        android:layout_marginRight="42dp"
         android:ems="10"
-        android:inputType="date" />
+        android:hint="2000.1.1 格式"
+        android:text=" "
+        android:inputType="date"
+        android:textSize="18dp" />
 
     <EditText
         android:id="@+id/add_date"
@@ -80,11 +94,14 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_marginTop="204dp"
-        android:layout_marginEnd="64dp"
-        android:layout_marginRight="64dp"
+        android:layout_marginTop="231dp"
+        android:layout_marginEnd="35dp"
+        android:layout_marginRight="35dp"
         android:ems="10"
-        android:inputType="text|date" />
+        android:hint="记录内容"
+        android:text=" "
+        android:inputType="text|date"
+        android:textSize="18dp" />
 
     <Button
         android:id="@+id/day_save"
@@ -104,7 +121,8 @@
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="27dp"
         android:onClick="onLook"
-        android:text="查看日志" />
+        android:text="查看日志"
+        android:layout_alignLeft="@+id/day_save" />
 
 
 </RelativeLayout>

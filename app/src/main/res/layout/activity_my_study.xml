@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:context=".MyStudyActivity">
+
+
+    <Button
+        android:id="@+id/studyone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="studyone"
+        android:text="学校官网" />
+
+    <Button
+        android:id="@+id/studytwo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="studytwo"
+        android:text="教务处" />
+
+</LinearLayout>

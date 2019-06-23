@@ -158,7 +158,7 @@ public class MyActivity extends AppCompatActivity implements Runnable{
         for(int i=1;i<3;i++){//加上一个空循环做延时操作
             Log.i(TAG,"run:i"+i);
             try {//由于此方法容易产生异常，就需捕获它
-                Thread.sleep(1000);//让这个线程停止两秒
+                Thread.sleep(200);//让这个线程停止两秒
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -217,7 +217,7 @@ public class MyActivity extends AppCompatActivity implements Runnable{
                         bundle.putString("day-date","日间；"+daytime.text()+">>夜间："+nighttime.text());
                         bundle.putString("temper-date","最高；"+max.text()+"℃  >>最低："+min.text()+"℃");
                     }
-                    else if ("南充".equals(city.text())){
+                    else if ("青羊".equals(city.text())){
                         bundle.putString("city-date2",city.text());
                         bundle.putString("day-date2","日间；"+daytime.text()+">>夜间："+nighttime.text());
                         bundle.putString("temper-date2","最高；"+max.text()+"℃  >>最低："+min.text()+"℃");

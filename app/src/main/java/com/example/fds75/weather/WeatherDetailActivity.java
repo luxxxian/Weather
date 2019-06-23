@@ -37,10 +37,12 @@ public class WeatherDetailActivity extends AppCompatActivity {
         ((TextView)findViewById(R.id.nighttimetext)).setText(nighttime);
         ((TextView)findViewById(R.id.nightwindtext)).setText(nightwind);
         ((TextView)findViewById(R.id.mintext)).setText(min);
+        ((TextView)findViewById(R.id.moreweather)).setText("获取更多有关于"+title+"的天气信息：");
 
         Ss = findViewById(R.id.res);
 
-        Ss.setText(String.valueOf(s));
+        //Ss.setText(String.valueOf(s));
+        Ss.setText("跳转网页");
 
     }
 

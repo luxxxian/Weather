@@ -25,7 +25,9 @@
         <activity android:name=".CountryWeather2Activity" />
         <activity android:name=".WeatherDetailActivity" />
         <activity android:name=".MyDailyActivity" />
-        <activity android:name=".MyDailySQLActivity"></activity>
+        <activity android:name=".MyDailySQLActivity" />
+        <activity android:name=".MyStudyActivity" />
+        <activity android:name=".SchoolActivity"></activity>
     </application>
 
 </manifest>

@@ -50,4 +50,12 @@ public class MainActivity extends AppCompatActivity {
         Intent config = new Intent(this,MyDailyActivity.class);
         startActivity(config);
     }
+
+    public void mystudy(View btn){
+        //打开一个页面Activity
+        Log.i("open","mystudy");
+        //用intent对象传参数
+        Intent config = new Intent(this,MyStudyActivity.class);
+        startActivity(config);
+    }
 }

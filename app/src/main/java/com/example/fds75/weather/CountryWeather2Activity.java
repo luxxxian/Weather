@@ -10,6 +10,8 @@ import android.os.Message;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.ListAdapter;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
 
@@ -27,8 +29,8 @@ import java.util.List;
 
 public class CountryWeather2Activity extends ListActivity implements Runnable,AdapterView.OnItemClickListener,AdapterView.OnItemLongClickListener {
 
-
     private String TAG = "mylist2";
+    String data[] = {"wait..."};
     Handler handler;
     private List<HashMap<String,String>> listItems;//存放文字、图片信息
     private SimpleAdapter listItemAdapter;//适配器
@@ -43,6 +45,9 @@ public class CountryWeather2Activity extends ListActivity implements Runnable,Ad
 
 //        MyAdapter myAdapter = new MyAdapter(this,R.layout.list_item,listItems);
 //        this.setListAdapter(myAdapter);//可通过自己定义Adapter对象来实现多级列表
+
+        ListAdapter adapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,data);//当前对象，布局，数据
+        setListAdapter(adapter);
 
         Thread t = new Thread(this);
         t.start();
@@ -116,8 +121,8 @@ public class CountryWeather2Activity extends ListActivity implements Runnable,Ad
 
                     Log.i(TAG, "run: text=" + city.text() + ">白天：" + daytime.text() + ">夜间：" + nighttime.text() + ">>最高：" + max.text() + ">最低：" + min.text()+"详情网址"+s);
                     HashMap<String,String> map = new HashMap<String, String>();
-                    map.put("ItemTitle",maincity.text()+">>"+city.text());
-                    map.put("ItemDetail",max.text()+"℃~"+min.text()+"℃");
+                    map.put("ItemTitle",maincity.text()+"——>>"+city.text());
+                    map.put("ItemDetail","温度变化："+max.text()+"℃~"+min.text()+"℃");
                     map.put("city",city.text());
                     map.put("daytime",daytime.text());
                     map.put("daywind",daywind.text());
