@@ -165,21 +165,6 @@ public class MyActivity extends AppCompatActivity implements Runnable{
             }
         }
 
-        //获取网络数据
-//        URL url = null;
-//        try {
-//            url = new URL("http://www.weather.com.cn/textFC/sichuan.shtml");
-//            HttpURLConnection http = (HttpURLConnection) url.openConnection();
-//            InputStream in = http.getInputStream();
-//
-//            String html = inputStream2String(in);
-//            Log.i(TAG, "run: ="+html);
-//
-//        } catch (MalformedURLException e) {
-//            e.printStackTrace();
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
         //用于保存获取的天气数据
         Bundle bundle = new Bundle();
 
@@ -219,10 +204,6 @@ public class MyActivity extends AppCompatActivity implements Runnable{
                     }
                 }
             }
-//            for (Element td : tds){
-//                Log.i(TAG, "run: td="+td);
-//                Log.i(TAG, "run: html="+td.html());
-//            }
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -235,8 +216,6 @@ public class MyActivity extends AppCompatActivity implements Runnable{
         //获取message对象，用于返回主线程
         Message msg = handler.obtainMessage();
         msg.what = 5;//what用于标记当前message的属性，用于整数
-        //Message mag = handler.obtainMessage(5); 上面两排可直接通过定义what来写
-        //msg.obj = "Hello from run()";
         msg.obj = bundle;
 
         handler.sendMessage(msg);//将msg发送到队列里

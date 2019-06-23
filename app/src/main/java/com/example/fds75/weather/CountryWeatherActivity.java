@@ -105,7 +105,6 @@ public class CountryWeatherActivity extends AppCompatActivity implements Runnabl
                         Element min = tds.get(i + 6);
 
                         Log.i(TAG, "run: text=" + city.text() + ">白天：" + daytime.text() + ">夜间：" + nighttime.text() + ">>最高：" + max.text() + ">最低：" + min.text());
-                        //retList.add(city.text() + ">白天：" + daytime.text() + ">夜间：" + nighttime.text() + ">>最高：" + max.text() + ">最低：" + min.text());
                         retList.add(maincity.text() + ">    " + city.text() + ">   最高：" + max.text() + "℃>  最低：" + min.text()+"℃");
 
                         WeatherItem weatherItem = new WeatherItem(city.text(),daytime.text(),nighttime.text(),max.text(),min.text());

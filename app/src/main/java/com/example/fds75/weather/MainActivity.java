@@ -22,11 +22,8 @@ public class MainActivity extends AppCompatActivity {
         Log.i("open","openOne");
         //用intent对象传参数
         Intent config = new Intent(this,CountryWeather2Activity.class);
-//        Intent web = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.jd.com"));
-//        Intent intent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:"));
         startActivity(config);
 
-        //startAction(new Intent(Intent.ACTION_VIEW,Uri.parse("www.baidu.com")));跳转网页
     }
 
     public void mine(View btn){
