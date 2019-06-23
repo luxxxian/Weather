@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:paddingBottom="10dp"
     android:orientation="vertical"
+    android:background="@drawable/ddl"
     tools:context=".DdlActivity">
 
     <LinearLayout
@@ -70,21 +71,25 @@
 
         <Button
             android:id="@+id/btn_change"
-            android:layout_marginTop="30dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:layout_marginTop="30dp"
             android:layout_weight="1"
+            android:background="@color/colorbtn"
             android:onClick="ddl"
-            android:text="修改" />
+            android:text="@string/btn_change" />
 
         <Button
             android:id="@+id/btn_new"
-            android:layout_marginTop="30dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:layout_marginTop="30dp"
             android:layout_weight="1"
+            android:background="@color/colorbtn"
             android:onClick="newBtn"
-            android:text="显示最新" />
+            android:text="@string/btn_new" />
     </LinearLayout>
 
 </LinearLayout>

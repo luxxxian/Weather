@@ -10,8 +10,9 @@
         android:id="@+id/WeatherName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="四川天气"
-        android:textSize="30sp" />
+        android:text="@string/WeatherName"
+        android:textColor="@color/colorpink"
+        android:textSize="15sp" />
 
     <ListView
         android:id="@+id/city"

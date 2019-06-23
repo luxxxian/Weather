@@ -54,6 +54,11 @@ public class SearchActivity extends AppCompatActivity{
 //       weatherText.setText(String.format(weather1));
     }
 
+    public void searchnew(View btn){
+        Intent config = new Intent(this,CountryWeatherActivity.class);
+        startActivity(config);
+    }
+
     public void search(View btn){
         weatherText = (EditText)findViewById(R.id.search_city);
         weather1 = weatherText.getText().toString();
@@ -65,10 +70,16 @@ public class SearchActivity extends AppCompatActivity{
 
         if(btn.getId()==R.id.search_weather) {
             WEManager wem = new WEManager(SearchActivity.this);
-            city.setText(weather1);
-            Log.i(TAG, "search: day"+wem.findDay(weather1));
-            clim1.setText(wem.findDay(weather1)+">>"+wem.findNight(weather1));
-            clim2.setText(wem.findMAX(weather1)+">>"+wem.findMIN(weather1));
+            if(weather1.equals(wem.findCity(weather1))) {
+                city.setText(weather1);
+                Log.i(TAG, "search: day" + wem.findDay(weather1));
+                clim1.setText("天气现象： 日：" + wem.findDay(weather1) + "~夜：" + wem.findNight(weather1));
+                clim2.setText("温差变化： " + wem.findMAX(weather1) + "℃~" + wem.findMIN(weather1) + "℃");
+            }else{
+                city.setText(weather1);
+                clim1.setText("不存在此城市，输入不正确");
+                clim2.setText("");
+            }
         }
 
     }

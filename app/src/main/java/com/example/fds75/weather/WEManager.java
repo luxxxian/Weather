@@ -118,5 +118,20 @@ public class WEManager {
         db.close();
         return min;
     }
+
+    public String findCity(String curCity){
+        SQLiteDatabase db = dbHelper.getReadableDatabase();
+        Cursor cursor = db.query(TBNAME, null, "curcity=?", new String[]{String.valueOf(curCity)}, null,
+                null, null);
+        String city = null;
+        if(cursor!=null && cursor.moveToFirst()){
+            if (curCity.equals(cursor.getString(cursor.getColumnIndex("CURCITY")))){
+                city = cursor.getString(cursor.getColumnIndex("CURCITY"));
+            }
+            cursor.close();
+        }
+        db.close();
+        return city;
+    }
 }
 

@@ -5,6 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@drawable/ddl"
+    android:padding="15dp"
     tools:context=".ChangeDdlActivity">
 
     <EditText
@@ -51,8 +53,11 @@
 
     <Button
         android:id="@+id/btn_save"
-        android:layout_width="match_parent"
+        android:layout_width="260dp"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:background="@color/colorbtn"
         android:onClick="save"
         android:text="保存" />
 

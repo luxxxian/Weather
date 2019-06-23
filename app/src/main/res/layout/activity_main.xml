@@ -5,67 +5,73 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@drawable/newmain"
     tools:context=".MainActivity">
 
     <TextView
         android:id="@+id/appname"
         android:layout_width="wrap_content"
-        android:layout_gravity="center"
         android:layout_height="wrap_content"
-        android:layout_margin="30dp"
-        android:text="我的小应用"
-        android:textSize="24sp" />
+        android:layout_gravity="center"
+        android:layout_margin="95dp"
+        android:text="@string/appname"
+        android:textSize="34sp" />
 
     <LinearLayout
         android:orientation="horizontal"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="0dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <Button
             android:id="@+id/weather_btn"
             android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:layout_margin="5dp"
+            android:layout_height="120dp"
+            android:layout_margin="10dp"
             android:layout_weight="1"
+
+            android:background="@color/colormain"
             android:onClick="openOne"
-            android:text="四川天气" />
+            android:text="@string/weather_btn" />
 
 
         <Button
             android:id="@+id/my_btn"
             android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:layout_margin="5dp"
+            android:layout_height="120dp"
+            android:layout_margin="10dp"
             android:layout_weight="1"
+            android:background="@color/colorPrimary"
             android:onClick="mine"
-            android:text="我的天气" />
+            android:text="@string/my_btn" />
 
     </LinearLayout>
 
     <LinearLayout
-        android:orientation="horizontal"
-        android:layout_marginTop="10dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="0dp"
+        android:orientation="horizontal">
 
         <Button
             android:id="@+id/my_ddl"
             android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:layout_margin="5dp"
+            android:layout_height="120dp"
+            android:layout_margin="10dp"
             android:layout_weight="1"
+            android:background="@color/colorPrimary"
             android:onClick="Myddl"
-            android:text="我的备忘录" />
+            android:text="@string/my_ddl" />
 
         <Button
             android:id="@+id/My_day"
             android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:layout_margin="5dp"
+            android:layout_height="120dp"
+            android:layout_margin="10dp"
             android:layout_weight="1"
+            android:background="@color/colormain"
             android:onClick="MyDay"
-            android:text="我的日志" />
+            android:text="@string/My_day" />
 
     </LinearLayout>
 

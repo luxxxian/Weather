@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
         //打开一个页面Activity
         Log.i("open","openOne");
         //用intent对象传参数
-        Intent config = new Intent(this,CountryWeatherActivity.class);
+        Intent config = new Intent(this,CountryWeather2Activity.class);
 //        Intent web = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.jd.com"));
 //        Intent intent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:"));
         startActivity(config);
@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.search,menu);
+        getMenuInflater().inflate(R.menu.search2,menu);
         return super.onCreateOptionsMenu(menu);
     }
 
@@ -64,9 +64,6 @@ public class MainActivity extends AppCompatActivity {
         Intent config;
         if (item.getItemId()==R.id.menu_search){
             config = new Intent(this,SearchActivity.class);
-            startActivity(config);
-        }else if (item.getItemId()==R.id.menu_study){
-            config = new Intent(this,MyStudyActivity.class);
             startActivity(config);
         }
 

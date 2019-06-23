@@ -4,41 +4,47 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/myweather"
     android:orientation="vertical"
+    android:padding="20dp"
     tools:context=".MyActivity">
 
         <TextView
             android:id="@+id/mine"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="25dp"
+            android:layout_margin="20dp"
             android:gravity="center"
-            android:text="我的天气"
+            android:text="@string/mine"
             android:textSize="30sp" />
 
         <Button
             android:id="@+id/btn_cd"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:layout_margin="10dp"
+            android:background="@color/colorbtn"
             android:onClick="onClick"
-            android:text="成都" />
+            android:text="@string/btn_cd" />
 
         <Button
             android:id="@+id/btn_nc"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
+            android:background="@color/colorbtn"
             android:onClick="onClick"
-            android:text="青羊" />
+            android:text="@string/btn_nc" />
 
         <Button
             android:id="@+id/btn_wj"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
+            android:background="@color/colorbtn"
             android:onClick="onClick"
-            android:text="温江" />
+            android:text="@string/btn_wj" />
 
 
         <TextView
@@ -48,7 +54,7 @@
             android:layout_margin="10dp"
             android:layout_marginTop="35dp"
             android:gravity="center"
-            android:text="城市"
+            android:text="@string/city"
             android:textSize="28sp" />
 
         <TextView
@@ -57,7 +63,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:gravity="center"
-            android:text="温差变化"
+            android:text="@string/climate2"
             android:textSize="24sp" />
 
         <TextView
@@ -66,7 +72,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:gravity="center"
-            android:text="天气现象"
+            android:text="@string/climate1"
             android:textSize="24sp" />
 
 </LinearLayout>

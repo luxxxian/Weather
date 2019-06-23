@@ -33,16 +33,16 @@ public class WeatherDetailActivity extends AppCompatActivity {
         ((TextView)findViewById(R.id.ontitle)).setText(title);
         ((TextView)findViewById(R.id.daytimetext)).setText(daytime);
         ((TextView)findViewById(R.id.daywindtext)).setText(daywind);
-        ((TextView)findViewById(R.id.maxtext)).setText(max);
+        ((TextView)findViewById(R.id.maxtext)).setText(max+"℃");
         ((TextView)findViewById(R.id.nighttimetext)).setText(nighttime);
         ((TextView)findViewById(R.id.nightwindtext)).setText(nightwind);
-        ((TextView)findViewById(R.id.mintext)).setText(min);
+        ((TextView)findViewById(R.id.mintext)).setText(min+"℃");
         ((TextView)findViewById(R.id.moreweather)).setText("获取更多有关于"+title+"的天气信息：");
 
         Ss = findViewById(R.id.res);
 
-        //Ss.setText(String.valueOf(s));
-        Ss.setText("跳转网页");
+        Ss.setText(String.valueOf(s));
+       // Ss.setText("跳转网页");
 
     }
 

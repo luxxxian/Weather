@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@drawable/search"
     tools:context=".SearchActivity">
 
 
@@ -12,10 +13,10 @@
         android:id="@+id/textView8"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="请输入将查询的城市："
+        android:text="@string/textView8"
         android:layout_margin="10dp"
         android:layout_marginTop="10dp"
-        android:textSize="18sp" />
+        android:textSize="22sp" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -26,23 +27,38 @@
             android:id="@+id/search_city"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="2"
+            android:layout_weight="4"
+            android:layout_margin="10dp"
+            android:textSize="18dp"
             android:ems="10"
             android:hint="city"
             android:inputType="text|textPersonName" />
 
         <Button
+            android:id="@+id/search_new"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:background="@color/colorbtn"
+            android:onClick="searchnew"
+            android:text="@string/search_new" />
+
+        <Button
             android:id="@+id/search_weather"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
+            android:layout_margin="10dp"
             android:layout_weight="1"
+            android:background="@color/colorbtn"
             android:onClick="search"
-            android:text="Button" />
+            android:text="@string/search_weather" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_margin="20dp"
         android:orientation="vertical">
 
         <TextView
@@ -52,7 +68,7 @@
             android:layout_margin="10dp"
             android:layout_marginTop="35dp"
             android:gravity="center"
-            android:text="城市"
+            android:text="@string/city"
             android:textSize="28sp" />
 
         <TextView
@@ -61,8 +77,8 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:gravity="center"
-            android:text="温差变化"
-            android:textSize="24sp" />
+            android:text="@string/climate2"
+            android:textSize="22sp" />
 
         <TextView
             android:id="@+id/search_climate1"
@@ -70,7 +86,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:gravity="center"
-            android:text="天气现象"
-            android:textSize="24sp" />
+            android:text="@string/climate1"
+            android:textSize="22sp" />
     </LinearLayout>
 </LinearLayout>

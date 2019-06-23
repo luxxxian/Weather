@@ -77,7 +77,7 @@ public class CountryWeatherActivity extends AppCompatActivity implements Runnabl
             Log.i("run", "日期相等，不从网络中获取数据，从数据库中获取数据 ");
             WEManager manager = new WEManager(this);
             for (WeatherItem item : manager.listAll()){
-                retList.add(item.getCurCity()+"-->"+item.getCurDay()+"-->"+item.getCurNight()+"-->"+item.getCurMax()+"-->"+item.getCurMin());
+                retList.add(item.getCurCity()+">  白天："+item.getCurDay()+">  夜晚："+item.getCurNight()+">  最高温："+item.getCurMax()+"℃>  最低温："+item.getCurMin()+"℃");
             }
 
         } else {
@@ -106,7 +106,7 @@ public class CountryWeatherActivity extends AppCompatActivity implements Runnabl
 
                         Log.i(TAG, "run: text=" + city.text() + ">白天：" + daytime.text() + ">夜间：" + nighttime.text() + ">>最高：" + max.text() + ">最低：" + min.text());
                         //retList.add(city.text() + ">白天：" + daytime.text() + ">夜间：" + nighttime.text() + ">>最高：" + max.text() + ">最低：" + min.text());
-                        retList.add(maincity.text() + ">>>" + city.text() + ">>最高：" + max.text() + ">最低：" + min.text());
+                        retList.add(maincity.text() + ">    " + city.text() + ">   最高：" + max.text() + "℃>  最低：" + min.text()+"℃");
 
                         WeatherItem weatherItem = new WeatherItem(city.text(),daytime.text(),nighttime.text(),max.text(),min.text());
                         rateList.add(weatherItem);

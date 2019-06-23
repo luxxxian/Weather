@@ -1,3 +1,44 @@
 <resources>
-    <string name="app_name">Weather</string>
+    <string name="app_name">MyLife</string>
+    <string name="my_ddl">我的备忘录</string>
+    <string name="appname">记录生活</string>
+    <string name="weather_btn">四川天气</string>
+    <string name="my_btn">我的天气</string>
+    <string name="My_day">我的日志</string>
+    <string name="ontitle">城市</string>
+    <string name="textView4">日间</string>
+    <string name="textView3">天气现象</string>
+    <string name="textView2">风向风力</string>
+    <string name="textView">最高气温</string>
+    <string name="textView7">夜间</string>
+    <string name="moreweather">获取更多天气信息</string>
+    <string name="res">更多天气资讯</string>
+    <string name="WeatherName">←←刷新成功，返回即可</string>
+
+    <string name="mine">我的天气</string>
+    <string name="btn_cd">成都</string>
+    <string name="btn_nc">青羊</string>
+    <string name="btn_wj">温江</string>
+    <string name="city">城市</string>
+    <string name="climate2">温差变化</string>
+    <string name="climate1">天气现象</string>
+
+    <string name="textView8">请输入将查询的城市：</string>
+    <string name="search_weather">查询</string>
+    <string name="search_new">刷新</string>
+
+    <string name="btn_change">修改</string>
+    <string name="btn_new">显示最新</string>
+
+    <string name="day_title">新的一天</string>
+    <string name="day_main">主题</string>
+    <string name="day_date">日期</string>
+    <string name="day_detail">内容</string>
+    <string name="day_save">保存</string>
+    <string name="day_look">查看日志</string>
+
+    <string name="menu_search">搜索天气</string>
+
+
+
 </resources>

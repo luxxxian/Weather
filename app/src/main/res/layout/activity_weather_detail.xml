@@ -6,16 +6,16 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="18dp"
+    android:background="@drawable/weatherdetail2"
     tools:context=".WeatherDetailActivity">
 
     <TextView
         android:id="@+id/ontitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        android:layout_margin="20dp"
+        android:layout_margin="15dp"
         android:gravity="center"
-        android:text="城市"
+        android:text="@string/ontitle"
         android:textSize="35dp" />
 
     <LinearLayout
@@ -23,8 +23,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_margin="10dp"
-        android:layout_marginTop="99dp"
+        android:layout_margin="0dp"
+        android:layout_marginTop="30dp"
         android:orientation="horizontal">
 
 
@@ -37,70 +37,73 @@
 
             <TextView
                 android:id="@+id/textView4"
-                android:textSize="25sp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="日间" />
+                android:text="@string/textView4"
+                android:textSize="25sp" />
 
             <TextView
                 android:id="@+id/textView3"
-                android:textSize="18sp"
-                android:layout_marginTop="20dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="天气现象" />
+                android:layout_marginTop="20dp"
+                android:text="@string/textView3"
+                android:textColor="@color/colorpink"
+                android:textSize="18sp" />
 
             <TextView
                 android:id="@+id/daytimetext"
-                android:textSize="18sp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="TextView" />
+                android:text="TextView"
+                android:textSize="18sp" />
 
             <TextView
                 android:id="@+id/textView2"
-                android:textSize="18sp"
-                android:layout_marginTop="20dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="风向风力" />
+                android:layout_marginTop="20dp"
+                android:text="@string/textView2"
+                android:textColor="@color/colorpink"
+                android:textSize="18sp" />
 
             <TextView
                 android:id="@+id/daywindtext"
-                android:textSize="18sp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="TextView" />
+                android:text="TextView"
+                android:textSize="18sp" />
 
             <TextView
                 android:id="@+id/textView"
-                android:textSize="18sp"
-                android:layout_marginTop="20dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="最高气温" />
+                android:layout_marginTop="20dp"
+                android:text="@string/textView"
+                android:textColor="@color/colorpink"
+                android:textSize="18sp" />
 
             <TextView
                 android:id="@+id/maxtext"
-                android:textSize="18sp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="TextView" />
+                android:text="TextView"
+                android:textSize="18sp" />
 
 
         </LinearLayout>
 
         <TextView
             android:layout_width="2dp"
-            android:textSize="18sp"
-            android:background="@color/colorPrimary"
             android:layout_height="match_parent"
             android:layout_marginLeft="8dp"
-            android:layout_marginRight="8dp" />
+            android:layout_marginRight="8dp"
+            android:background="@color/colorPrimary"
+            android:textSize="18sp" />
 
         <LinearLayout
             android:layout_width="0dp"
@@ -111,91 +114,104 @@
 
             <TextView
                 android:id="@+id/textView7"
-                android:textSize="25sp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="夜间" />
+                android:text="@string/textView7"
+                android:textSize="25sp" />
 
             <TextView
                 android:id="@+id/textView9"
-                android:textSize="18sp"
-                android:layout_marginTop="20dp"
-                android:layout_marginLeft="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="天气现象"
-                />
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="20dp"
+                android:text="@string/textView3"
+                android:textColor="@color/colorpink"
+                android:textSize="18sp" />
 
             <TextView
                 android:id="@+id/nighttimetext"
-                android:textSize="18sp"
-                android:layout_marginLeft="10dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="TextView" />
+                android:layout_marginLeft="10dp"
+                android:text="TextView"
+                android:textSize="18sp" />
 
             <TextView
                 android:id="@+id/textView13"
-                android:textSize="18sp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="20dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="风向风力" />
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="20dp"
+                android:text="@string/textView2"
+                android:textColor="@color/colorpink"
+                android:textSize="18sp" />
 
             <TextView
                 android:id="@+id/nightwindtext"
-                android:textSize="18sp"
-                android:layout_marginLeft="10dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="TextView" />
+                android:layout_marginLeft="10dp"
+                android:text="TextView"
+                android:textSize="18sp" />
 
             <TextView
                 android:id="@+id/textView10"
-                android:textSize="18sp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="20dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="最低气温" />
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="20dp"
+                android:text="@string/textView"
+                android:textColor="@color/colorpink"
+                android:textSize="18sp" />
 
             <TextView
                 android:id="@+id/mintext"
-                android:textSize="18sp"
-                android:layout_marginLeft="10dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="TextView" />
+                android:layout_marginLeft="10dp"
+                android:text="TextView"
+                android:textSize="18sp" />
 
         </LinearLayout>
 
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/moreweather"
-        android:layout_marginTop="35dp"
-        android:textSize="15sp"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="获取更多天气信息：" />
+        android:layout_marginTop="35dp">
 
-    <Button
-        android:id="@+id/res"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_gravity="center"
-        android:layout_marginTop="2dp"
-        android:layout_marginBottom="11dp"
-        android:gravity="center"
-        android:onClick="btnMore"
+        <TextView
+            android:id="@+id/moreweather"
+            android:textSize="15sp"
+            android:layout_margin="5dp"
+            android:layout_weight="4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorAccent"
+            android:text="获取更多天气信息：" />
 
-        android:text="更多天气资讯" />
+        <Button
+            android:id="@+id/res"
+            android:layout_width="60dp"
+            android:layout_height="35dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="11dp"
+            android:layout_weight="1"
+            android:background="@color/colorbtn"
+            android:gravity="center"
+            android:onClick="btnMore"
+            android:text="@string/res" />
+    </LinearLayout>
+
+
 
 </LinearLayout>
