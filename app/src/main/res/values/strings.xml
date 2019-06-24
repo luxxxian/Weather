@@ -10,6 +10,7 @@
     <string name="textView3">天气现象</string>
     <string name="textView2">风向风力</string>
     <string name="textView">最高气温</string>
+    <string name="textView10">最低气温</string>
     <string name="textView7">夜间</string>
     <string name="moreweather">获取更多天气信息</string>
     <string name="res">更多天气资讯</string>
@@ -38,6 +39,10 @@
     <string name="day_look">查看日志</string>
 
     <string name="menu_search">搜索天气</string>
+
+    <string name="add_main">本条日志主题</string>
+    <string name="add_date">2000.1.1 格式</string>
+    <string name="add_detail">记录内容</string>
 
 
 

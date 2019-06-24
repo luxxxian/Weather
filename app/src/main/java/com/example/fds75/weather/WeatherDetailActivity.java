@@ -42,7 +42,6 @@ public class WeatherDetailActivity extends AppCompatActivity {
         Ss = findViewById(R.id.res);
 
         Ss.setText(String.valueOf(s));
-       // Ss.setText("跳转网页");
 
     }
 

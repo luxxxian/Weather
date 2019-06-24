@@ -43,9 +43,6 @@ public class CountryWeather2Activity extends ListActivity implements Runnable,Ad
         initListView();
         this.setListAdapter(listItemAdapter);
 
-//        MyAdapter myAdapter = new MyAdapter(this,R.layout.list_item,listItems);
-//        this.setListAdapter(myAdapter);//可通过自己定义Adapter对象来实现多级列表
-
         ListAdapter adapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,data);//当前对象，布局，数据
         setListAdapter(adapter);
 
@@ -97,7 +94,7 @@ public class CountryWeather2Activity extends ListActivity implements Runnable,Ad
         List<HashMap<String,String>> retList = new ArrayList<HashMap<String, String>>();
         Document doc = null;
         try {
-            Thread.sleep(1000);
+            Thread.sleep(500);
             doc = Jsoup.connect("http://www.weather.com.cn/textFC/sichuan.shtml").get();
             //doc = Jsoup.parse(html);
             Log.i(TAG, "run: "+doc.title());
@@ -147,7 +144,6 @@ public class CountryWeather2Activity extends ListActivity implements Runnable,Ad
 
     }
 
-
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
@@ -195,9 +191,6 @@ public class CountryWeather2Activity extends ListActivity implements Runnable,Ad
     @Override
     public boolean onItemLongClick(AdapterView<?> parent, View view,final int position, long id) {
         Log.i(TAG, "onItemLongClick: 长按position="+position);
-        //删除操作
-//        listItems.remove(position);
-//        listItemAdapter.notifyDataSetChanged();
 
         //构造AlertDialog对话框进行确认操作
         AlertDialog.Builder builder = new AlertDialog.Builder(this);

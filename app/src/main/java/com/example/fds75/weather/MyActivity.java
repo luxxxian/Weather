@@ -101,9 +101,6 @@ public class MyActivity extends AppCompatActivity implements Runnable{
                     Sclim13 = bdl.getString("day-date3");
                     Sclim23 = bdl.getString("temper-date3");
 
-//                    Log.i(TAG, "handleMessage: date"+Scity);
-//                    Log.i(TAG, "handleMessage: date"+Sclim1);
-//                    Log.i(TAG, "handleMessage: date"+Sclim2);
 
                     //保存更新的日期
                     SharedPreferences sharedPreferences = getSharedPreferences("myrate",Activity.MODE_PRIVATE);
@@ -132,9 +129,6 @@ public class MyActivity extends AppCompatActivity implements Runnable{
     }
 
     public void onClick(View btn){
-//        String Scity = city.getText().toString();
-//        String Sclim1 = clim1.getText().toString();
-//        String Sclim2 = clim2.getText().toString();
 
         if(btn.getId()==R.id.btn_cd){
             city.setText(String.format(Scity));
@@ -210,9 +204,6 @@ public class MyActivity extends AppCompatActivity implements Runnable{
         }
 
         //bundle中保存所获取的数据
-
-
-
         //获取message对象，用于返回主线程
         Message msg = handler.obtainMessage();
         msg.what = 5;//what用于标记当前message的属性，用于整数
@@ -235,7 +226,6 @@ public class MyActivity extends AppCompatActivity implements Runnable{
         }
         return out.toString();
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

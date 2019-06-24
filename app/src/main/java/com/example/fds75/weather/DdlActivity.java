@@ -111,7 +111,6 @@ public class DdlActivity extends AppCompatActivity{
             editor.commit();
             Log.i(TAG,"onActivityResult:数据以保存到SharedPreferences");
 
-
         }
         super.onActivityResult(requestCode, resultCode, data);
     }

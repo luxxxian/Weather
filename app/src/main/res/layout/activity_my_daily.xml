@@ -63,30 +63,15 @@
         android:id="@+id/add_main"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/add_date"
-        android:layout_alignLeft="@+id/add_date"
+        android:layout_alignStart="@+id/add_detail"
+        android:layout_alignLeft="@+id/add_detail"
         android:layout_alignParentTop="true"
         android:layout_marginStart="2dp"
         android:layout_marginLeft="2dp"
         android:layout_marginTop="89dp"
         android:ems="10"
-        android:hint="本条日志主题"
-        android:inputType="textPersonName"
-        android:textSize="18dp" />
-
-    <EditText
-        android:id="@+id/add_detail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginTop="161dp"
-        android:layout_marginEnd="42dp"
-        android:layout_marginRight="42dp"
-        android:ems="10"
-        android:hint="2000.1.1 格式"
-        android:inputType="date"
+        android:hint="@string/add_main"
+        android:inputType="text|textPersonName"
         android:textSize="18dp" />
 
     <EditText
@@ -96,12 +81,27 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
+        android:layout_marginTop="161dp"
+        android:layout_marginEnd="42dp"
+        android:layout_marginRight="42dp"
+        android:ems="10"
+        android:hint="@string/add_date"
+        android:inputType="date"
+        android:textSize="18dp" />
+
+    <EditText
+        android:id="@+id/add_detail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
         android:layout_marginTop="231dp"
         android:layout_marginEnd="43dp"
         android:layout_marginRight="43dp"
         android:ems="10"
-        android:hint="记录内容"
-        android:inputType="text|date"
+        android:hint="@string/add_detail"
+        android:inputType="text"
         android:textSize="18dp" />
 
     <Button

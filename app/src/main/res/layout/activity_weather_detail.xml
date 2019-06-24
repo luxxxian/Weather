@@ -164,7 +164,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="20dp"
-                android:text="@string/textView"
+                android:text="@string/textView10"
                 android:textColor="@color/colorpink"
                 android:textSize="18sp" />
 

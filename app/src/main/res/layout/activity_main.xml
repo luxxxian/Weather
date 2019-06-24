@@ -5,15 +5,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:padding="10dp"
     android:background="@drawable/newmain"
     tools:context=".MainActivity">
 
     <TextView
         android:id="@+id/appname"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_margin="95dp"
+        android:gravity="center"
+        android:layout_margin="90dp"
         android:text="@string/appname"
         android:textSize="34sp" />
 
@@ -29,7 +31,7 @@
             android:layout_height="120dp"
             android:layout_margin="10dp"
             android:layout_weight="1"
-
+            android:textSize="20dp"
             android:background="@color/colormain"
             android:onClick="openOne"
             android:text="@string/weather_btn" />
@@ -41,6 +43,7 @@
             android:layout_height="120dp"
             android:layout_margin="10dp"
             android:layout_weight="1"
+            android:textSize="20dp"
             android:background="@color/colorPrimary"
             android:onClick="mine"
             android:text="@string/my_btn" />
@@ -59,6 +62,7 @@
             android:layout_height="120dp"
             android:layout_margin="10dp"
             android:layout_weight="1"
+            android:textSize="20dp"
             android:background="@color/colorPrimary"
             android:onClick="Myddl"
             android:text="@string/my_ddl" />
@@ -67,6 +71,7 @@
             android:id="@+id/My_day"
             android:layout_width="match_parent"
             android:layout_height="120dp"
+            android:textSize="20dp"
             android:layout_margin="10dp"
             android:layout_weight="1"
             android:background="@color/colormain"

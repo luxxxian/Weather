@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">MyLife</string>
+    <string name="my_ddl">My memo</string>
+    <string name="appname">Record the life</string>
+    <string name="weather_btn">Sichuan weather</string>
+    <string name="my_btn">My weather</string>
+    <string name="My_day">My blogs</string>
+    <string name="ontitle">city</string>
+    <string name="textView4">daytime</string>
+    <string name="textView3">Weather phenomenon</string>
+    <string name="textView2">wind</string>
+    <string name="textView">max weather</string>
+    <string name="textView10">min weather</string>
+    <string name="textView7">nighttime</string>
+    <string name="moreweather">get more weather</string>
+    <string name="res">more</string>
+    <string name="WeatherName">"   11/5000  ←← refresh successfully, return"</string>
+    <string name="mine">My weather</string>
+    <string name="btn_cd">chengdu</string>
+    <string name="btn_nc">qingyang</string>
+    <string name="btn_wj">wenjiang</string>
+    <string name="city">city</string>
+    <string name="climate2">Temperature changing</string>
+    <string name="climate1">Weather phenomenon</string>
+    <string name="textView8">Please enter the city to be queried:</string>
+    <string name="search_weather">query</string>
+    <string name="search_new">new</string>
+    <string name="btn_change">change</string>
+    <string name="btn_new">the latest</string>
+    <string name="day_title">The new day</string>
+    <string name="day_main">The theme</string>
+    <string name="day_date">date</string>
+    <string name="day_detail">details</string>
+    <string name="day_save">commit</string>
+    <string name="day_look">looking</string>
+    <string name="menu_search">search weather</string>
+    <string name="add_main">This log topic</string>
+    <string name="add_date">2000.1.1 format</string>
+    <string name="add_detail">Record contents</string>
+</resources>

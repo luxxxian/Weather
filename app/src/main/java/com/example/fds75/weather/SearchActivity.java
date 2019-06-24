@@ -51,7 +51,6 @@ public class SearchActivity extends AppCompatActivity{
         clim1 = (TextView)findViewById(R.id.search_climate1);
         clim2 = (TextView)findViewById(R.id.search_climate2);
 
-//       weatherText.setText(String.format(weather1));
     }
 
     public void searchnew(View btn){
@@ -62,8 +61,6 @@ public class SearchActivity extends AppCompatActivity{
     public void search(View btn){
         weatherText = (EditText)findViewById(R.id.search_city);
         weather1 = weatherText.getText().toString();
-//        String Scity = city.getText().toString();
-
 
         Log.i(TAG, "search: 按钮weatherText"+weatherText);
         Log.i(TAG, "search: 按钮weather1"+weather1);
